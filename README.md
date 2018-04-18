@@ -29,3 +29,15 @@ When promp:
 ```bash
 firebase deploy
 ```
+
+## Start Lock event listener
+
+Upadte config.js with firebase credentials
+
+Monitors real time changes to locks from firebase db
+
+```bash
+cd ../lock
+npm install
+node app.js
+```

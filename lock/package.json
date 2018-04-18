@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase-admin": "^5.11.0",
+    "onoff": "^3.0.2"
+  }
+}
