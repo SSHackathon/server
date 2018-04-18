@@ -5,18 +5,16 @@ admin.initializeApp();
 
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
-exports.receiveAssistantRequests = functions.https.onRequest((request, response) => {
-
+exports.receiveAssistantRequests = functions.https.onRequest(function(request, response) {
     const app = new DialogflowApp({request: request, response: response});
-
     function handlerRequest(app) {
 
-        const device = app.getArgument('devices');
-        const status = app.getArgument('status');
+    const device = app.getArgument('devices');
+    const status = app.getArgument('status');
 
-        return admin.database().ref(`/automation/${device}/value`).set(status)
-            .then(snapshot => {
-                app.ask(`Ok, switching ${device} ${status}. Do you want to control anything else?`);
+    return admin.database().ref('/automation/' + device + '/value').set(status)
+            .then(function(snapshot) {
+                app.ask('Ok, switching ' + device + ' ' + status + '. Do you want to control anything else?');
             });
 
     }
