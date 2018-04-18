@@ -1,5 +1,7 @@
 # server
 
+node version v6.11.5
+
 ## Firebase setup
 Install and login
 ```bash
